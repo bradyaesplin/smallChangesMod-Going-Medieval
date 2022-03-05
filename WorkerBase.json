@@ -1,0 +1,348 @@
+{
+  "repository": [
+    {
+      "id": "worker",
+      "appearanceID": "default",
+	  "cantWalkOnTags": [2, 8],
+      "passionMultipliers": [
+        1,
+        2.5,
+        4
+      ],
+      "storageBase": {
+        "capacity": 100
+      },
+      "availableEquipmentSlots": 31,
+      "warmth": {
+        "hotTresholds": [
+          { 
+            "trigger": 26,
+            "effectors": ["GlobalTempHot01"]
+          },
+          { 
+            "trigger": 30,
+            "effectors": ["GlobalTempHot02"]
+          },
+          { 
+            "trigger": 35,
+            "effectors": ["GlobalTempHot03"]
+          }
+        ],
+        "coldThresholds": [
+          { 
+            "trigger": 13,
+            "effectors": ["GlobalTempCold01"]
+          },
+          { 
+            "trigger": 4,
+            "effectors": ["GlobalTempCold02"]
+          },
+          { 
+            "trigger": -13,
+            "effectors": ["GlobalTempCold03"]
+          }
+        ]
+      },
+      "combatHitXp": {
+        "meleeHit": 100,
+        "meleeMis": 30,
+        "marksmanHit": 55,
+        "marksmanMiss": 20,
+        "animalHandlingHit": 90,
+        "animalHandlingMiss": 1
+      },
+      "combatModes":
+      [
+        {
+          "modeType": 1,
+          "effector": "CombatModeAggresive",
+          "combatAiAgent": "WorkerAggressiveAiAgent"
+        },
+        {
+          "modeType": 2,
+          "effector": "WorkerFleeAiAgent",
+          "combatAiAgent": "WorkerFleeAiAgent"
+        },
+        {
+          "modeType": 3,
+          "effector": "CombatModeIgnore",
+          "combatAiAgent": "WorkerIgnoreAiAgent"
+        },
+        {
+          "modeType": 4,
+          "combatAiAgent": "WorkerDraftAiAgent"
+        }
+      ],
+      "minSleepEffectorTime": 2,
+      "sleepEffectors": 
+      [
+        {
+          "key": "outside",
+          "value": "SleptOutside"
+        },
+        {
+          "key": "rain",
+          "value": "SleptOnRain"
+        },
+        {
+          "key": "snow",
+          "value": "SleptOnSnow"
+        },
+        {
+          "key": "ground",
+          "value": "SleptWithoutBed"
+        },
+        {
+          "key": "sleeping",
+          "value": "SleepingHealing"
+        },
+        {
+          "key": "hay_wood_bed",
+          "value": "SleptInMedQualityBed"
+        },
+        {
+          "key": "hay_sleeping_spot",
+          "value": "SleptInLowQualityBed"
+        }
+      ],
+      "wakeUpEffectors": 
+      [
+        {
+          "id": "none",
+          "value": 100
+        },
+        {
+          "id": "GoodDream01",
+          "value": 20
+        },
+        {
+          "id": "GoodDream02",
+          "value": 5
+        },
+        {
+          "id": "BadDream01",
+          "value": 20
+        },
+        {
+          "id": "BadDream02",
+          "value": 5
+        },
+        {
+          "id": "GoodDreamFood",
+          "value": 5
+        },
+        {
+          "id": "GoodDreamCanibal",
+          "value": 5
+        },
+        {
+          "id": "GoodDreamSpoiled",
+          "value": 5
+        },
+        {
+          "id": "GoodDreamAscetic",
+          "value": 5
+        },
+        {
+          "id": "GoodDreambloodlust",
+          "value": 5
+        },
+        {
+          "id": "BadDreamFood",
+          "value": 5
+        },
+        {
+          "id": "BadDreamSpoiled",
+          "value": 5
+        }
+      ],
+      "killedHumanEffectors": 
+      [
+        "KilledBloodlustMood",
+        "KilledBloodlustAtributes",
+        "KilledPacifistMood"
+      ],
+      "heightEffectors":
+      [
+        {
+          "category": "height_short",
+          "range": {
+            "min" : 0,
+            "max" : 145
+          },
+          "effectors": [
+            "HeightLowEffector01"
+          ]
+        },
+        {
+          "category": "height_normal",
+          "range": {
+            "min" : 146,
+            "max" : 180
+          },
+          "effectors": [
+          ]
+        },
+        {
+          "category": "height_tall",
+          "range": {
+            "min" : 181,
+            "max" : 300
+          },
+          "effectors": [
+            "HeightHighEffector01"
+          ]
+        }
+      ],
+      "weightEffectors":
+      [
+        {
+          "category": "weight_1",
+          "range": {
+            "min" : 0,
+            "max" : 55
+          },
+          "effectors": [
+            "WeightLowEffector01"
+          ]
+        },
+        {
+          "category": "weight_2",
+          "range": {
+            "min" : 56,
+            "max" : 90
+          },
+          "effectors": [
+          ]
+        },
+        {
+          "category": "weight_3",
+          "range": {
+            "min" : 91,
+            "max" : 300
+          },
+          "effectors": [
+            "WeightHighEffector01"
+          ]
+        }
+      ],
+      "ageEffectors":
+      [
+        {
+          "category": "youth_age_category",
+          "range": {
+            "min" : 18,
+            "max" : 25
+          },
+          "effectors": [
+            "YoungAgeEffector01"
+          ]
+        },
+        {
+          "category": "maturity_age_category",
+          "range": {
+            "min" : 26,
+            "max" : 45
+          },
+          "effectors": [
+            "AdultAgeEffector01"
+          ]
+        },
+        {
+          "category": "aging_age_category",
+          "range": {
+            "min" : 46,
+            "max" : 65
+          },
+          "effectors": [
+            "MidAgeEffector01"
+          ]
+        },
+        {
+          "category": "old_age_category",
+          "range": {
+            "min" : 66,
+            "max" : 200
+          },
+          "effectors": [
+            "SeniorAgeEffector01"
+          ]
+        }
+      ],
+      "oldAgeDeathRanges":
+      [
+        {
+          "ageRange": {
+            "min" : 0,
+            "max" : 65
+          },
+          "chance" : 0
+        },
+        {
+          "ageRange": {
+            "min" : 66,
+            "max" : 75
+          },
+          "chance" : 0.001
+        },
+        {
+          "ageRange": {
+            "min" : 76,
+            "max" : 85
+          },
+          "chance" : 0.003
+        },
+        {
+          "ageRange": {
+            "min" : 86,
+            "max" : 95
+          },
+          "chance" : 0.01
+        }, 
+        {
+          "ageRange": {
+            "min" : 96,
+            "max" : 100
+          },
+          "chance" : 0.02
+        },
+        {
+          "ageRange": {
+            "min" : 101,
+            "max" : 200
+          },
+          "chance" : 0.05
+        }
+      ],
+      "breakdownEffectors": 
+      [
+        "AgentBreakdownSmall",
+        "AgentDrinkBindge",
+        "AgentEatBindge",
+        "AgentBreakdownSmallGetMood",
+        "AgentBreakdownSmallAfter"
+      ],
+      "inspiredEffectors": 
+      [
+        "AgentMoodGood"
+      ],
+      "idleWarningDelayTime": 5.0,
+      "faintEffector": "WhileFaintedEffector",
+      "restEffector": "RestingHealing",
+      "banishEffector": "BanishedVillager",
+      "raidWonEffector": "RaidWonEffector",
+      "raidLostEffector": "RaidLostEffector",
+      "eatStandingUpEffector": "eatStandingUpEffector",
+      "eatWithoutTableEffector": "eatWithoutTableEffector",
+      "eatAtTableEffector": "AteAtTable",
+      "prayingEffector": "FaithWhilePraying",
+      "afterVomitEffector": "VomitStop",
+      "entertainmentEffector": "EntertainmentWhileActive",
+      "spawnEffectors": ["NewVillagerInitialOptimisam"],
+      "afterCrazyEffector": "AgentBreakdownAfterMoodBoost",
+      "whileUntendedEffector": "whileUntendedEffector",
+      "breakdownChance": 0.5,
+      "inspiredChance": 0.5
+    }
+  ]
+}
